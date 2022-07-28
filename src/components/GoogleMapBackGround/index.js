@@ -19,7 +19,10 @@ function GoogleMapBackground() {
         width: "100%",
         height: "100%",
       }}
-      onClick={() => console.log("GoogleMap")}
+      onClick={(e) => {
+        console.log("GoogleMap");
+        console.log(e);
+      }}
     >
       <Marker position={marker} key={GOOGLE_MAPS_API_KEY} onClick={() => {}} />
     </GoogleMap>
@@ -32,7 +35,10 @@ export default () => {
   return (
     <div className="map-container">
       <WrappedMap
-        onClick={() => console.log("Wrapper")}
+        onClick={(e) => {
+          console.log("Wrapper");
+          console.log(e);
+        }}
         googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}&v=3.exp&libraries=geometry,drawing,places`}
         loadingElement={<div>Loading</div>}
         containerElement={<div>Loading</div>}
