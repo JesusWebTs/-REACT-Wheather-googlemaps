@@ -28,6 +28,10 @@ export default () => {
         loadingElement={<div>Loading</div>}
         containerElement={<div>Loading</div>}
         mapElement={<div>Loading</div>}
+        styles={{
+          width: "100%",
+          height: "100%",
+        }}
       />
     </div>
   );
