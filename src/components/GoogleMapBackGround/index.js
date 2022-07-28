@@ -8,9 +8,14 @@ import {
 } from "react-google-maps";
 import { GOOGLE_MAPS_API_KEY } from "../../credentials";
 
+const initLocation = {
+  lat: 12,
+  lng: 12,
+};
+
 function GoogleMapBackground() {
-  const [center, setCenter] = useState({ lat: 12, lng: 12 });
-  const [marker, setMarker] = useState({ lat: 12, lng: 12 });
+  const [center, setCenter] = useState(initLocation);
+  const [marker, setMarker] = useState(initLocation);
   return (
     <GoogleMap
       defaultCenter={center}
@@ -19,11 +24,11 @@ function GoogleMapBackground() {
         width: "100%",
         height: "100%",
       }}
-      onClick={(e) => {
-        console.log("GoogleMap");
-        console.log(e);
-        console.log(e.latLng.lat());
-        console.log(e.latLng.lng());
+      onClick={(e) => {    
+        setMarker({
+          lat: e.latLng.lat(),
+          lng: e.latLng.lng(),
+        });
       }}
     >
       <Marker position={marker} key={GOOGLE_MAPS_API_KEY} onClick={() => {}} />
