@@ -1,0 +1,66 @@
+.weather-tile__container {
+  width: 400px;
+  height: 200px;
+  background-color: var(--white-2);
+  border: 2px solid var(--white-1);
+  border-radius: 10px;
+  padding: 15px 30px;
+  backdrop-filter: 8px;
+}
+
+.weather-tile__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white-1);
+  flex-direction: column;
+  gap: 20px;
+}
+
+.weather-tile__header > h2 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.weather-tile__weather-tipe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+}
+.weather-tile__img-container {
+  width: 50px;
+  height: 50px;
+  background-color: var(--black-1);
+}
+.weather-tile__img-container > * {
+  width: 100%;
+  height: 100%;
+}
+
+.weather-tile__weather-tipe > p {
+  margin: 0;
+}
+
+.weather-tile__current-weather {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.weather-tile__weather-degrees {
+  font-size: 40px;
+}
+.weather-tile__weather-information {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.weather-tile__weather-information > * {
+  margin: 0;
+}
+.weather-tile__body {
+}
+.weather-tile__predictions {
+}

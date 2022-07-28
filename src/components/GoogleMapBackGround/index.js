@@ -46,7 +46,7 @@ const WrappedMap = withScriptjs(withGoogleMap(GoogleMapBackground));
 
 export default () => {
   return (
-    <div className="map-container">
+    <div className="map-container map-container--fix">
       <WrappedMap
         onClick={(e) => {
           console.log("Wrapper");

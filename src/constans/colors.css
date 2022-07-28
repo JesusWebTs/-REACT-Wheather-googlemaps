@@ -1,0 +1,20 @@
+:root {
+  --primary-1: #0000ff;
+  --primary-2: #0000ff33;
+  --primary-3: #0000ff66;
+  --secundary-1: #00ffff;
+  --secundary-2: #00ffff33;
+  --secundary-3: #00ffff66;
+  --terceary-1: #00ff00;
+  --terceary-2: #00ff0033;
+  --terceary-3: #00ff0066;
+  --gary-1: #999999;
+  --gary-2: #666666;
+  --gary-3: #333333;
+  --black-1: #000000;
+  --black-2: #00000066;
+  --black-3: #00000033;
+  --white-1: #ffffff;
+  --white-2: #ffffff66;
+  --white-3: #ffffff33;
+}

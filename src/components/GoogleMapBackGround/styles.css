@@ -4,3 +4,9 @@
   width: 100%;
   height: 100%;
 }
+
+.map-container--fix {
+  position: fixed;
+  top: 0;
+  left: 0;
+}

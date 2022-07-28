@@ -1,16 +1,13 @@
 import "./App.css";
-import { GoogleMap, withScriptjs, withGoogleMap } from "react-google-maps";
-import { GoogleMapBackGround } from "./components";
-import { GOOGLE_MAPS_API_KEY } from "./credentials";
-
-const render = (status) => {
-  return <h1>{status}</h1>;
-};
+import { GoogleMapBackGround, WeatherTile } from "./components";
+import { useWeather } from "./hooks";
 
 function App() {
+  const { weather } = useWeather();
   return (
     <div className="App">
-      <GoogleMapBackGround />
+      {/* <GoogleMapBackGround /> */}
+      <WeatherTile weather={weather} />
     </div>
   );
 }
