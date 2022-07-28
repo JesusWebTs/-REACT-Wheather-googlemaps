@@ -12,7 +12,14 @@ function GoogleMapBackground() {
   const [center, setCenter] = useState({ lat: 12, lng: 12 });
   const [marker, setMarker] = useState({ lat: 12, lng: 12 });
   return (
-    <GoogleMap defaultCenter={center} defaultZoom={10}>
+    <GoogleMap
+      defaultCenter={center}
+      defaultZoom={10}
+      styles={{
+        width: "100%",
+        height: "100%",
+      }}
+    >
       <Marker position={marker} key={GOOGLE_MAPS_API_KEY} onClick={() => {}} />
     </GoogleMap>
   );
