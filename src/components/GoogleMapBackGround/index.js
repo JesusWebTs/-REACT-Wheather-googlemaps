@@ -24,14 +24,20 @@ function GoogleMapBackground() {
         width: "100%",
         height: "100%",
       }}
-      onClick={(e) => {    
+      onClick={(e) => {
         setMarker({
           lat: e.latLng.lat(),
           lng: e.latLng.lng(),
         });
       }}
     >
-      <Marker position={marker} key={GOOGLE_MAPS_API_KEY} onClick={() => {}} />
+      <Marker
+        position={marker}
+        key={GOOGLE_MAPS_API_KEY}
+        onClick={(e) => {
+          console.log(e);
+        }}
+      />
     </GoogleMap>
   );
 }
