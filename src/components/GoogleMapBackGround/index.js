@@ -38,6 +38,7 @@ export default () => {
         styles={{
           width: "100%",
           height: "100%",
+          GoogleMapBackground: "black"
         }}
       />
     </div>
