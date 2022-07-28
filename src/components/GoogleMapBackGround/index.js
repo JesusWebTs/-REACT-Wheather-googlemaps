@@ -22,6 +22,8 @@ function GoogleMapBackground() {
       onClick={(e) => {
         console.log("GoogleMap");
         console.log(e);
+        console.log(e.lat());
+        console.log(e.lng());
       }}
     >
       <Marker position={marker} key={GOOGLE_MAPS_API_KEY} onClick={() => {}} />
