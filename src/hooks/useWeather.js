@@ -1,4 +1,5 @@
 import { useState, useContext, useEffect } from "react";
+import WeatherInfoModel from "../Models/WheatherInfoModel";
 
 import { weatherApi } from "../services/APIS";
 
@@ -8,24 +9,28 @@ const initLocation = {
 };
 
 const useWeather = () => {
-  const [weather, setWeather] = useState({});
+  const [weathers, setWeathers] = useState([]);
   const [coords, setCoords] = useState(initLocation);
   useEffect(() => {
-    if (weather) getWeather();
+    if (weathers) getWeather();
     return () => {};
   }, []);
 
   useEffect(() => {
-    console.log(weather);
+    console.log(weathers);
     return () => {};
-  }, [weather]);
+  }, [weathers]);
 
   const getWeather = async () => {
-    let weather = await weatherApi.getCurrentWeather(coords);
-    setWeather(weather);
+    let weather = await weatherApi.getMultipleFullWeatherPrediction([
+      coords,
+      { lat: 10, lng: -10 },
+      { lat: 6.42375, lng: -66.58973 },
+    ]);
+    setWeathers(weather);
   };
   return {
-    weather,
+    weathers,
   };
 };
 

@@ -3,3 +3,8 @@
   height: 100vh;
   background-color: var(--black-1);
 }
+
+.app-tiles-container {
+  position: relative;
+  z-index: 20;
+}

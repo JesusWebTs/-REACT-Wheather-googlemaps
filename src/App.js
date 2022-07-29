@@ -1,13 +1,20 @@
+import React from "react";
 import "./App.css";
 import { GoogleMapBackGround, WeatherTile } from "./components";
 import { useWeather } from "./hooks";
 
 function App() {
-  const { weather } = useWeather();
+  const { weathers } = useWeather();
   return (
     <div className="App">
       <GoogleMapBackGround />
-      <WeatherTile weather={weather} />
+      <div className="app-tiles-container">
+        {weathers.map((weather) => (
+          <React.Fragment>
+            <WeatherTile weather={weather} />
+          </React.Fragment>
+        ))}
+      </div>
     </div>
   );
 }
