@@ -6,7 +6,7 @@ function App() {
   const { weather } = useWeather();
   return (
     <div className="App">
-      {/* <GoogleMapBackGround /> */}
+      <GoogleMapBackGround />
       <WeatherTile weather={weather} />
     </div>
   );
