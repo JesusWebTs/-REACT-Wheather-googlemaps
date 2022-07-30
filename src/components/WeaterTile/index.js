@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./styles.css";
-import { sol } from "./weathers";
 
 function WeatherTile({ weather }) {
   const URL = "http://openweathermap.org/img/w/";
