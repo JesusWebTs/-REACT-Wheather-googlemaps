@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import "./styles.css";
 import {
   GoogleMap,
@@ -13,7 +13,6 @@ import useGoogleMapsBackground from "./hooks/useGoogleMapsBackground";
 
 function GoogleMapBackground() {
   const { addNewMarker, weathers, center, markers } = useGoogleMapsBackground();
-  const mapRef = useRef();
   return (
     <GoogleMap
       defaultCenter={center}
@@ -23,8 +22,6 @@ function GoogleMapBackground() {
         height: "100%",
       }}
       onClick={(e) => {
-        console.log(e);
-        if (e.target === mapRef.current) return;
         addNewMarker({
           lat: e.latLng.lat(),
           lng: e.latLng.lng(),
@@ -44,7 +41,9 @@ function GoogleMapBackground() {
       {weathers.map((weather) => (
         <React.Fragment key={weather.id}>
           <OverlayView
-            ref={mapRef}
+            onClick={(e) => {
+              console.log(e);
+            }}
             position={{ lat: weather.coord.lat, lng: weather.coord.lon }}
             mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
           >
