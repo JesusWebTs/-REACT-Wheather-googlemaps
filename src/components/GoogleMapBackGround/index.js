@@ -9,6 +9,7 @@ import {
 } from "react-google-maps";
 import { GOOGLE_MAPS_API_KEY } from "../../credentials";
 import WeatherTile from "../WeaterTile";
+import useGoogleMapsBackground from "./hooks/useGoogleMapsBackground";
 
 const initLocation = {
   lat: 12,
@@ -16,9 +17,7 @@ const initLocation = {
 };
 
 function GoogleMapBackground() {
-  const [center, setCenter] = useState(initLocation);
-  const [markers, setMarker] = useState([initLocation]);
-  const [weather, setWeather] = useState(null);
+  const { addNewMarker, weathers } = useGoogleMapsBackground();
   return (
     <GoogleMap
       defaultCenter={center}
@@ -27,17 +26,14 @@ function GoogleMapBackground() {
         width: "100%",
         height: "100%",
       }}
-      onClick={(e) => {
-        setMarker((prev) => [
-          ...prev,
-          {
-            lat: e.latLng.lat(),
-            lng: e.latLng.lng(),
-          },
-        ]);
-      }}
+      onClick={(e) =>
+        addNewMarker({
+          lat: e.latLng.lat(),
+          lng: e.latLng.lng(),
+        })
+      }
     >
-      {markers.map((marker, i) => (
+      {/* {markers.map((marker, i) => (
         <Marker
           key={i}
           position={marker}
@@ -45,13 +41,16 @@ function GoogleMapBackground() {
             console.log(e);
           }}
         ></Marker>
+      ))} */}
+
+      {weathers.map((weather) => (
+        <OverlayView
+          position={marker}
+          mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
+        >
+          {<WeatherTile weather={weather} />}
+        </OverlayView>
       ))}
-      {/* <OverlayView
-        position={marker}
-        mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
-      >
-        {weather ? <WeatherTile weather={weather} /> : <></>}
-      </OverlayView> */}
     </GoogleMap>
   );
 }

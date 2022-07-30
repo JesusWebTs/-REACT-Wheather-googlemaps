@@ -15,7 +15,6 @@ const useWeather = () => {
   const getWeather = async (coors) => {
     let weather = await weatherApi.getMultipleFullWeatherPrediction(coors);
     setWeathers(weather);
-    return weather;
   };
   return {
     weathers,
