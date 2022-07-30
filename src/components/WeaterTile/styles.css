@@ -101,6 +101,7 @@
   overflow: hidden;
   background: none;
   padding: 0;
+  border: none;
 }
 
 .weather-tile__background--hide > .weather-tile__container {
