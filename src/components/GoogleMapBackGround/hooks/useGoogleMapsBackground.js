@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { useWeather } from "../../../hooks";
 
 const initLocation = {
-  lat: 12,
-  lng: 12,
+  lat: 10.48801,
+  lng: -66.87919,
 };
 
 const useGoogleMpasBackground = () => {
