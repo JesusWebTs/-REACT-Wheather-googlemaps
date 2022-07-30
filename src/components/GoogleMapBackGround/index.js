@@ -23,7 +23,7 @@ function GoogleMapBackground() {
         height: "100%",
       }}
       onClick={(e) => {
-        console.log(e.target);
+        console.log(e);
         if (e.target === mapRef.current) return;
         addNewMarker({
           lat: e.latLng.lat(),
