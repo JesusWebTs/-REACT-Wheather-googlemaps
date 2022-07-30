@@ -11,6 +11,8 @@
   padding: 8px 8px;
   transition: all 0.1s linear;
   cursor: pointer;
+  position: relative;
+  z-index: 20;
 }
 
 .weather-tile__container {
@@ -103,6 +105,7 @@
   background: none;
   padding: 0;
   border: none;
+  z-index: 10;
 }
 
 .weather-tile__background--hide > .weather-tile__container {
