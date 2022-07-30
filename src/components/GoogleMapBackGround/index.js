@@ -28,7 +28,7 @@ function GoogleMapBackground() {
         });
       }}
     >
-      {markers.map((marker, i) => (
+      {/* {markers.map((marker, i) => (
         <Marker
           key={i}
           position={marker}
@@ -36,7 +36,7 @@ function GoogleMapBackground() {
             console.log(e);
           }}
         ></Marker>
-      ))}
+      ))} */}
 
       {weathers.map((weather) => (
         <React.Fragment key={weather.id}>
