@@ -51,12 +51,14 @@ function GoogleMapBackground() {
       </Marker> */}
       <OverlayView
         position={marker}
-        key={GOOGLE_MAPS_API_KEY}
-        onClick={(e) => {
-          console.log(e);
-        }}
+        mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
       >
-        <p>Marker Personalizado</p>
+        <div>
+          <h1>OverlayView</h1>
+          <button onClick={onClick} type="button">
+            Click me
+          </button>
+        </div>
       </OverlayView>
     </GoogleMap>
   );
