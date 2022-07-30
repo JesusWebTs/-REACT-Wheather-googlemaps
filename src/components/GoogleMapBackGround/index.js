@@ -53,7 +53,11 @@ function GoogleMapBackground() {
         position={marker}
         mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
       >
-        <div>
+        <div
+          style={{
+            backgroundColor: "black",
+          }}
+        >
           <h1>OverlayView</h1>
           <button onClick={onClick} type="button">
             Click me
