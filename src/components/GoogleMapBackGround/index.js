@@ -5,6 +5,7 @@ import {
   withScriptjs,
   withGoogleMap,
   Marker,
+  OverlayView,
 } from "react-google-maps";
 import { GOOGLE_MAPS_API_KEY } from "../../credentials";
 
@@ -31,7 +32,7 @@ function GoogleMapBackground() {
         });
       }}
     >
-      <Marker
+      {/* <Marker
         position={marker}
         key={GOOGLE_MAPS_API_KEY}
         onClick={(e) => {
@@ -47,7 +48,16 @@ function GoogleMapBackground() {
         >
           <p>Marker Personalizado</p>
         </div>
-      </Marker>
+      </Marker> */}
+      <OverlayView
+        position={marker}
+        key={GOOGLE_MAPS_API_KEY}
+        onClick={(e) => {
+          console.log(e);
+        }}
+      >
+        <p>Marker Personalizado</p>
+      </OverlayView>
     </GoogleMap>
   );
 }
