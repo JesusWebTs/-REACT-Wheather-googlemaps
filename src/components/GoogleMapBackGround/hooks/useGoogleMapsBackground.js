@@ -13,7 +13,7 @@ const useGoogleMpasBackground = () => {
   const { getWeather } = useWeather();
 
   useEffect(() => {
-    getWeather(markers).then((el) => setWeathers({ ...el }));
+    getWeather(markers).then((el) => setWeathers(el));
     return () => {};
   }, [markers]);
 

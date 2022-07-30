@@ -38,15 +38,14 @@ function GoogleMapBackground() {
         ></Marker>
       ))} */}
 
-      {console.log(weathers)}
-      {/* {weathers.map((weather) => (
+      {weathers.map((weather) => (
         <OverlayView
           position={{ lat: weather.coord.lat, lng: weather.coord.lon }}
           mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
         >
           {<WeatherTile weather={weather} />}
         </OverlayView>
-      ))} */}
+      ))}
     </GoogleMap>
   );
 }
