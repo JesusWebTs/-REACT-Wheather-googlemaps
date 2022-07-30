@@ -11,3 +11,7 @@
   left: 0;
   z-index: 10;
 }
+
+.google-map-marker {
+  transform: translateX(-225px) translateY(-150px);
+}

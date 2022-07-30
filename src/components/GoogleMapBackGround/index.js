@@ -47,7 +47,11 @@ function GoogleMapBackground() {
             position={{ lat: weather.coord.lat, lng: weather.coord.lon }}
             mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
           >
-            {<WeatherTile weather={weather} />}
+            {
+              <div className="google-map-marker">
+                <WeatherTile weather={weather} />
+              </div>
+            }
           </OverlayView>
         </React.Fragment>
       ))}
