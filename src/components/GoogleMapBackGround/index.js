@@ -39,12 +39,14 @@ function GoogleMapBackground() {
       ))} */}
 
       {weathers.map((weather) => (
-        <OverlayView
-          position={{ lat: weather.coord.lat, lng: weather.coord.lon }}
-          mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
-        >
-          {<WeatherTile weather={weather} />}
-        </OverlayView>
+        <React.Fragment key={weather.id}>
+          <OverlayView
+            position={{ lat: weather.coord.lat, lng: weather.coord.lon }}
+            mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
+          >
+            {<WeatherTile weather={weather} />}
+          </OverlayView>
+        </React.Fragment>
       ))}
     </GoogleMap>
   );
