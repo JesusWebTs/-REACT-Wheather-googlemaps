@@ -17,8 +17,8 @@ const initLocation = {
 
 function GoogleMapBackground() {
   const [center, setCenter] = useState(initLocation);
-  const [marker, setMarker] = useState(initLocation);
-  const [weather, setWeather] = useState(initLocation);
+  const [markers, setMarker] = useState([initLocation]);
+  const [weather, setWeather] = useState(null);
   return (
     <GoogleMap
       defaultCenter={center}
@@ -28,35 +28,30 @@ function GoogleMapBackground() {
         height: "100%",
       }}
       onClick={(e) => {
-        setMarker({
-          lat: e.latLng.lat(),
-          lng: e.latLng.lng(),
-        });
+        setMarker((prev) => [
+          ...prev,
+          {
+            lat: e.latLng.lat(),
+            lng: e.latLng.lng(),
+          },
+        ]);
       }}
     >
-      {/* <Marker
-        position={marker}
-        key={GOOGLE_MAPS_API_KEY}
-        onClick={(e) => {
-          console.log(e);
-        }}
-      >
-        <div
-          style={{
-            backgroundColor: "black",
-            width: 100,
-            height: 100,
+      {markers.map((marker, i) => (
+        <Marker
+          key={i}
+          position={marker}
+          onClick={(e) => {
+            console.log(e);
           }}
-        >
-          <p>Marker Personalizado</p>
-        </div>
-      </Marker> */}
-      <OverlayView
+        ></Marker>
+      ))}
+      {/* <OverlayView
         position={marker}
         mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
       >
         {weather ? <WeatherTile weather={weather} /> : <></>}
-      </OverlayView>
+      </OverlayView> */}
     </GoogleMap>
   );
 }
