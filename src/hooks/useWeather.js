@@ -17,7 +17,7 @@ const useWeather = () => {
   }, []);
 
   useEffect(() => {
-    console.log(weathers);
+    /* console.log(weathers); */
     return () => {};
   }, [weathers]);
 

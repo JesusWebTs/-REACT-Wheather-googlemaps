@@ -1,11 +1,27 @@
-.weather-tile__container {
-  width: 400px;
-  height: 200px;
-  background-color: var(--black-2);
+.weather-tile__background {
+  display: inline-block;
+  background-image: url(./assets/images/clouds.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 450px;
+  height: 300px;
+  background-size: 200%;
   border: 2px solid var(--black-1);
   border-radius: 10px;
-  padding: 15px 30px;
-  backdrop-filter: 8px;
+  padding: 8px 8px;
+}
+
+.weather-tile__container {
+  width: 100%;
+  height: 100%;
+  background-color: var(--black-2);
+  padding: 10px;
+  backdrop-filter: 2px;
+  border-radius: 10px;
+  border: 1px solid var(--white-1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .weather-tile__header {
@@ -19,7 +35,7 @@
 
 .weather-tile__header > h2 {
   margin: 0;
-  font-size: 15px;
+  font-size: 25px;
 }
 
 .weather-tile__weather-tipe {
@@ -27,12 +43,11 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 5px;
+  gap: 0px;
 }
 .weather-tile__img-container {
-  width: 50px;
-  height: 50px;
-  background-color: var(--black-1);
+  width: 70px;
+  height: 70px;
 }
 .weather-tile__img-container > * {
   width: 100%;
@@ -50,7 +65,7 @@
   width: 100%;
 }
 .weather-tile__weather-degrees {
-  font-size: 40px;
+  font-size: 30px;
 }
 .weather-tile__weather-information {
   display: flex;
@@ -62,5 +77,19 @@
 }
 .weather-tile__body {
 }
-.weather-tile__predictions {
+.weather-tile__predictions > ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style: none;
+  color: var(--white-1);
+}
+
+.weather-tile__predictions > ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

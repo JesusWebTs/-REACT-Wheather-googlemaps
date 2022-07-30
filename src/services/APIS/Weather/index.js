@@ -17,11 +17,16 @@ class Weather extends Request {
       endPoint: `/forecast?lat=${lat}&lon=${lng}&appid=${this.appId}`,
     }).catch((el) => console.log(el));
   }
+  async getOneWeatherCall({ lat, lng }) {
+    return await this.get({
+      endPoint: `/onecall?lat=${lat}&lon=${lng}&appid=${this.appId}`,
+    }).catch((el) => console.log(el));
+  }
 
   async getFullWeatherPrediction({ lat, lng }) {
     let weather = await Promise.all([
       this.getCurrentWeather({ lat, lng }),
-      this.getForecastHourly({ lat, lng }),
+      this.getOneWeatherCall({ lat, lng }),
     ]).catch((el) => console.log(el));
     return new WheatherInfoModel({ weather });
   }

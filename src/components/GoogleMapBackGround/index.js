@@ -37,7 +37,9 @@ function GoogleMapBackground() {
         onClick={(e) => {
           console.log(e);
         }}
-      />
+      >
+        <p>Marker Personalizado</p>
+      </Marker>
     </GoogleMap>
   );
 }
