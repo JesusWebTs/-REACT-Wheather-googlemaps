@@ -106,7 +106,7 @@
 }
 
 .weather-tile__background--hide > .weather-tile__container {
-  background-color: var(--white-3);
+  background-color: var(--black-3);
   border: none;
   display: flex;
   justify-content: center;
