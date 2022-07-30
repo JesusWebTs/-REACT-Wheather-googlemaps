@@ -20,7 +20,7 @@ const initLocation = {
 async function GoogleMapBackground() {
   const [center, setCenter] = useState(initLocation);
   const [marker, setMarker] = useState(initLocation);
-  const [weather, setWeather] = useState(new WeatherInfoModel());
+  const [weather, setWeather] = useState(null);
   const { getWeather } = useWeather();
 
   return (
@@ -63,7 +63,7 @@ async function GoogleMapBackground() {
         position={marker}
         mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
       >
-        <WeatherTile weather={weather} />
+        {weather ? <WeatherTile weather={weather} /> : <></>}
       </OverlayView>
     </GoogleMap>
   );
