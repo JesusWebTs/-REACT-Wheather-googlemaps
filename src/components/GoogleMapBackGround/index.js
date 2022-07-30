@@ -17,7 +17,7 @@ const initLocation = {
 };
 
 function GoogleMapBackground() {
-  const { addNewMarker, weathers } = useGoogleMapsBackground();
+  const { addNewMarker, weathers, markers, center } = useGoogleMapsBackground();
   return (
     <GoogleMap
       defaultCenter={center}
@@ -45,7 +45,7 @@ function GoogleMapBackground() {
 
       {weathers.map((weather) => (
         <OverlayView
-          position={marker}
+          position={{ lat: weather.coord.lat, lng: weather.coord.lon }}
           mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
         >
           {<WeatherTile weather={weather} />}

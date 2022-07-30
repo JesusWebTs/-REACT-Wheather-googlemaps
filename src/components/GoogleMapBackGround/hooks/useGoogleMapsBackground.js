@@ -22,6 +22,7 @@ const useGoogleMpasBackground = () => {
   };
 
   return {
+    markers,
     center,
     weathers,
     addNewMarker,
