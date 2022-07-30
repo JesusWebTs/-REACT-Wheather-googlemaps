@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useWeather } from "../../../hooks";
 
 const initLocation = {
@@ -6,7 +6,7 @@ const initLocation = {
   lng: 12,
 };
 
-export default useGoogleMpasBackground = () => {
+const useGoogleMpasBackground = () => {
   const [center, setCenter] = useState(initLocation);
   const [markers, setMarkers] = useState([initLocation]);
   const [weathers, setWeathers] = useState(null);
@@ -27,3 +27,5 @@ export default useGoogleMpasBackground = () => {
     addNewMarker,
   };
 };
+
+export default useGoogleMpasBackground;
