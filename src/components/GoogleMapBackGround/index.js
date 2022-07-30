@@ -32,13 +32,6 @@ async function GoogleMapBackground() {
         height: "100%",
       }}
       onClick={(e) => {
-        getWeather({
-          lat: e.latLng.lat(),
-          lng: e.latLng.lng(),
-        }).then((el) => {
-          console.log(el);
-          setWeather(el);
-        });
         setMarker({
           lat: e.latLng.lat(),
           lng: e.latLng.lng(),
