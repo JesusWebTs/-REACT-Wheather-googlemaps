@@ -35,7 +35,10 @@ async function GoogleMapBackground() {
         getWeather({
           lat: e.latLng.lat(),
           lng: e.latLng.lng(),
-        }).then((el) => setWeather(el));
+        }).then((el) => {
+          console.log(el);
+          setWeather(el);
+        });
         setMarker({
           lat: e.latLng.lat(),
           lng: e.latLng.lng(),
@@ -63,7 +66,7 @@ async function GoogleMapBackground() {
         position={marker}
         mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
       >
-        {weather ? <WeatherTile weather={weather} /> : <></>}
+        {/* {weather ? <WeatherTile weather={weather} /> : <></>} */}
       </OverlayView>
     </GoogleMap>
   );
