@@ -59,7 +59,12 @@ function GoogleMapBackground() {
           }}
         >
           <h1>OverlayView</h1>
-          <button onClick={onClick} type="button">
+          <button
+            onClick={(e) => {
+              console.log(e);
+            }}
+            type="button"
+          >
             Click me
           </button>
         </div>
