@@ -17,7 +17,6 @@ class DailyWeatherInfo {
   wind = { speed: 0, deg: 0, gust: 0 };
   weatherTipe = [{ id: 0, main: "", description: "", icon: "" }];
   constructor({ dayWeather, day = 0 }) {
-    console.log(day);
     this.day = days[day];
     this.humidity = dayWeather.humidity;
     this.pressure = dayWeather.pressure;

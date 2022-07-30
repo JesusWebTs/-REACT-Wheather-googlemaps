@@ -38,6 +38,7 @@ function GoogleMapBackground() {
         ></Marker>
       ))} */}
 
+      {console.log(weathers)}
       {/* {weathers.map((weather) => (
         <OverlayView
           position={{ lat: weather.coord.lat, lng: weather.coord.lon }}
