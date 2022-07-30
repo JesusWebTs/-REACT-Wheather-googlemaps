@@ -11,26 +11,15 @@ const initLocation = {
 const useWeather = () => {
   const [weathers, setWeathers] = useState([]);
   const [coords, setCoords] = useState(initLocation);
-  useEffect(() => {
-    if (weathers) getWeather();
-    return () => {};
-  }, []);
 
-  useEffect(() => {
-    /* console.log(weathers); */
-    return () => {};
-  }, [weathers]);
-
-  const getWeather = async () => {
-    let weather = await weatherApi.getMultipleFullWeatherPrediction([
-      coords,
-      { lat: 10, lng: -10 },
-      { lat: 6.42375, lng: -66.58973 },
-    ]);
+  const getWeather = async (coors) => {
+    let weather = await weatherApi.getMultipleFullWeatherPrediction(coors);
     setWeathers(weather);
+    return weather;
   };
   return {
     weathers,
+    getWeather,
   };
 };
 

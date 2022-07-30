@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles.css";
 import { sol } from "./weathers";
 
 function WeatherTile({ weather }) {
   const URL = "http://openweathermap.org/img/w/";
+  const [show, setShowTile] = useState(false);
   return (
-    <div className="weather-tile__background">
+    <div
+      className={`weather-tile__background ${
+        show
+          ? "weather-tile__background--show"
+          : "weather-tile__background--hide"
+      }`}
+      onClick={() => setShowTile((prev) => !prev)}
+    >
       <div className="weather-tile__container">
+        <div className="weather-tile__mark">
+          <div className="weather-tile__img-container">
+            <img src={`${URL}${weather.weatherTipe[0].icon}.png`} />
+          </div>
+        </div>
         <div className="weather-tile__header">
           <h2>{`${weather.name}, ${weather.country}`}</h2>
           <div className="weather-tile__current-weather">

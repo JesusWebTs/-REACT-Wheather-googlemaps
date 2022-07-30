@@ -8,15 +8,21 @@ import {
   OverlayView,
 } from "react-google-maps";
 import { GOOGLE_MAPS_API_KEY } from "../../credentials";
+import WeatherTile from "../WeaterTile";
+import WeatherInfoModel from "../../Models/WheatherInfoModel";
+import { useWeather } from "../../hooks";
 
 const initLocation = {
   lat: 12,
   lng: 12,
 };
 
-function GoogleMapBackground() {
+async function GoogleMapBackground() {
   const [center, setCenter] = useState(initLocation);
   const [marker, setMarker] = useState(initLocation);
+  const [weather, setWeather] = useState(new WeatherInfoModel());
+  const { getWeather } = useWeather();
+
   return (
     <GoogleMap
       defaultCenter={center}
@@ -26,6 +32,10 @@ function GoogleMapBackground() {
         height: "100%",
       }}
       onClick={(e) => {
+        getWeather({
+          lat: e.latLng.lat(),
+          lng: e.latLng.lng(),
+        }).then((el) => setWeather(el));
         setMarker({
           lat: e.latLng.lat(),
           lng: e.latLng.lng(),
@@ -53,21 +63,7 @@ function GoogleMapBackground() {
         position={marker}
         mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
       >
-        <div
-          style={{
-            backgroundColor: "black",
-          }}
-        >
-          <h1>OverlayView</h1>
-          <button
-            onClick={(e) => {
-              console.log(e);
-            }}
-            type="button"
-          >
-            Click me
-          </button>
-        </div>
+        <WeatherTile weather={weather} />
       </OverlayView>
     </GoogleMap>
   );

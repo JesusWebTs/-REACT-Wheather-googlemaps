@@ -8,13 +8,6 @@ function App() {
   return (
     <div className="App">
       <GoogleMapBackGround />
-      <div className="app-tiles-container">
-        {weathers.map((weather) => (
-          <React.Fragment key={weather.id}>
-            <WeatherTile weather={weather} />
-          </React.Fragment>
-        ))}
-      </div>
     </div>
   );
 }
