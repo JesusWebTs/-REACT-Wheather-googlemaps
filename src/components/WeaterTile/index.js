@@ -13,6 +13,7 @@ function WeatherTile({ weather }) {
       }`}
       onClick={(e) => {
         e.preventDefault();
+        e.stopPropagation();
         setShowTile((prev) => !prev);
       }}
     >
