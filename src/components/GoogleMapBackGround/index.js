@@ -11,13 +11,8 @@ import { GOOGLE_MAPS_API_KEY } from "../../credentials";
 import WeatherTile from "../WeaterTile";
 import useGoogleMapsBackground from "./hooks/useGoogleMapsBackground";
 
-const initLocation = {
-  lat: 12,
-  lng: 12,
-};
-
 function GoogleMapBackground() {
-  const { addNewMarker, weathers, markers, center } = useGoogleMapsBackground();
+  const { addNewMarker, weathers, center } = useGoogleMapsBackground();
   return (
     <GoogleMap
       defaultCenter={center}
@@ -43,14 +38,14 @@ function GoogleMapBackground() {
         ></Marker>
       ))} */}
 
-      {weathers.map((weather) => (
+      {/* {weathers.map((weather) => (
         <OverlayView
           position={{ lat: weather.coord.lat, lng: weather.coord.lon }}
           mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
         >
           {<WeatherTile weather={weather} />}
         </OverlayView>
-      ))}
+      ))} */}
     </GoogleMap>
   );
 }

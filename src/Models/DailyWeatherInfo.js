@@ -19,7 +19,6 @@ class DailyWeatherInfo {
   constructor({ dayWeather, day = 0 }) {
     console.log(day);
     this.day = days[day];
-    console.log(this.day);
     this.humidity = dayWeather.humidity;
     this.pressure = dayWeather.pressure;
     this.temperature = dayWeather.temp.day;
