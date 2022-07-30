@@ -10,6 +10,7 @@
   border-radius: 10px;
   padding: 8px 8px;
   transition: all 0.1s linear;
+  cursor: pointer;
 }
 
 .weather-tile__container {

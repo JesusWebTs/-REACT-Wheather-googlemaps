@@ -11,7 +11,10 @@ function WeatherTile({ weather }) {
           ? "weather-tile__background--show"
           : "weather-tile__background--hide"
       }`}
-      onClick={() => setShowTile((prev) => !prev)}
+      onClick={(e) => {
+        e.preventDefault();
+        setShowTile((prev) => !prev);
+      }}
     >
       <div className="weather-tile__container">
         <div className="weather-tile__mark">
