@@ -38,7 +38,15 @@ function GoogleMapBackground() {
           console.log(e);
         }}
       >
-        <p>Marker Personalizado</p>
+        <div
+          style={{
+            backgroundColor: "black",
+            width: 100,
+            height: 100,
+          }}
+        >
+          <p>Marker Personalizado</p>
+        </div>
       </Marker>
     </GoogleMap>
   );
