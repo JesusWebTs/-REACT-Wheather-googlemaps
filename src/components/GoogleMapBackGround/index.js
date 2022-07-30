@@ -28,7 +28,7 @@ function GoogleMapBackground() {
         })
       }
     >
-      {markers.map((marker, i) => (
+      {/* {markers.map((marker, i) => (
         <Marker
           key={i}
           position={marker}
@@ -36,16 +36,16 @@ function GoogleMapBackground() {
             console.log(e);
           }}
         ></Marker>
-      ))}
+      ))} */}
 
-      {/* {weathers.map((weather) => (
+      {weathers.map((weather) => (
         <OverlayView
           position={{ lat: weather.coord.lat, lng: weather.coord.lon }}
           mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
         >
           {<WeatherTile weather={weather} />}
         </OverlayView>
-      ))} */}
+      ))}
     </GoogleMap>
   );
 }
