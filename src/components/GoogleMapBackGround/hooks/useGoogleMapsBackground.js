@@ -23,7 +23,7 @@ const useGoogleMpasBackground = () => {
   }, [weathers]);
 
   const addNewMarker = async (marker) => {
-    await addNewWeather(marker);
+    await addNewWeather([marker]);
     setMarkers((prev) => [...prev, marker]);
   };
 
