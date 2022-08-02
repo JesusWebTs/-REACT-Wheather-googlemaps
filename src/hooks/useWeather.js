@@ -13,6 +13,7 @@ const useWeather = () => {
   const [coords, setCoords] = useState(initLocation);
 
   const addNewWeather = async (coors) => {
+    console.log(coors);
     let weather = await weatherApi.getMultipleFullWeatherPrediction(coors);
     setWeathers((prev) => [...prev, weather]);
   };
