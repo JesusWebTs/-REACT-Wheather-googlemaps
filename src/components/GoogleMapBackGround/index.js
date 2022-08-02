@@ -12,7 +12,7 @@ import WeatherTile from "../WeaterTile";
 import useGoogleMapsBackground from "./hooks/useGoogleMapsBackground";
 
 function GoogleMapBackground() {
-  const { addNewMarker, weathers, center, markers } = useGoogleMapsBackground();
+  const { addNewMarker, weathers, center, markers, getWeather } = useGoogleMapsBackground();
   return (
     <GoogleMap
       defaultCenter={center}
