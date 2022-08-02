@@ -9,23 +9,16 @@ const initLocation = {
 const useGoogleMpasBackground = () => {
   const [center, setCenter] = useState(initLocation);
   const [markers, setMarkers] = useState([initLocation]);
-  const { getWeather, weathers } = useWeather();
+  const { getWeather, weathers, addNewWeather } = useWeather();
+  const [available, setAvailable] = useState(false);
 
   useEffect(() => {
     if (markers[markers.length - 1]) getWeather([markers[markers.length - 1]]);
     return () => {};
   }, []);
-  useEffect(() => {
-    return () => {};
-  }, [markers]);
-
-  useEffect(() => {
-    console.log("weathers");
-    console.log(weathers);
-    return () => {};
-  }, [weathers]);
 
   const addNewMarker = (marker) => {
+    addNewWeather([marker]);
     setMarkers((prev) => [...prev, marker]);
   };
 
@@ -34,7 +27,7 @@ const useGoogleMpasBackground = () => {
     center,
     weathers,
     addNewMarker,
-    getWeather,
+    addNewWeather,
   };
 };
 

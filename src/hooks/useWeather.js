@@ -12,13 +12,19 @@ const useWeather = () => {
   const [weathers, setWeathers] = useState([]);
   const [coords, setCoords] = useState(initLocation);
 
-  const getWeather = async (coors) => {
+  const addNewWeather = async (coors) => {
     let weather = await weatherApi.getMultipleFullWeatherPrediction(coors);
     setWeathers((prev) => [...prev, weather]);
   };
+  const getWeather = async (coors) => {
+    let weather = await weatherApi.getMultipleFullWeatherPrediction(coors);
+    setWeathers(weather);
+  };
+
   return {
     weathers,
     getWeather,
+    addNewWeather,
   };
 };
 
