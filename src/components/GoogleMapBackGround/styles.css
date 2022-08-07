@@ -12,12 +12,12 @@
   z-index: 10;
 }
 
-.google-map-marker,
-.gm-control-active,
-.gm-fullscreen-control {
+.google-map-marker {
   transform: translateX(-35px) translateY(-35px);
 }
 
-.gmnoprint {
+.gmnoprint,
+.gm-control-active,
+.gm-fullscreen-control {
   transform: translateY(calc(55px + 14px + 10px));
 }
