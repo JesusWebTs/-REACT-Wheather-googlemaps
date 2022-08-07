@@ -4,6 +4,10 @@ import "./styles.css";
 function WeatherTile({ weather }) {
   const URL = "http://openweathermap.org/img/w/";
   const [show, setShowTile] = useState(false);
+  const place =
+    !weather.name || weather.country
+      ? `${weather.name}, ${weather.country}`
+      : "GLobal";
   return (
     <div
       className={`weather-tile__background ${
@@ -24,7 +28,7 @@ function WeatherTile({ weather }) {
           </div>
         </div>
         <div className="weather-tile__header">
-          <h2>{`${weather.name}, ${weather.country}`}</h2>
+          <h2>{place}</h2>
           <div className="weather-tile__current-weather">
             <div className="weather-tile__weather-tipe">
               <div className="weather-tile__img-container">

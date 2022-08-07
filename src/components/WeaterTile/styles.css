@@ -106,6 +106,12 @@
   padding: 0;
   border: none;
   z-index: 10;
+  transform: scale(0.5);
+}
+
+.weather-tile__background--show,
+.weather-tile__background--shide:hover {
+  transform: scale(1);
 }
 
 .weather-tile__background--hide > .weather-tile__container {
