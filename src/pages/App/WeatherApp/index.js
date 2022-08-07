@@ -17,13 +17,15 @@ function WeatherApp() {
   return (
     <div>
       <header className="weather-app-page__header">
-        <h2>Weather Searcher</h2>
-        <AutoCompleteAddress setCoors={setCenter} />
+        <div className="weather-app-page__searcher">
+          <h2>Weather Searcher</h2>
+          <AutoCompleteAddress setCoors={setCenter} />
+        </div>
         <NavComponent
           routes={[
             { routeLink: "/", routeName: "Global", routeType: "user" },
             { routeLink: "/", routeName: "Favorites", routeType: "user" },
-            { routeLink: "/", routeName: "LogOut", routeType: "user" },
+            { routeLink: "/", routeName: "Log out", routeType: "user" },
           ]}
         />
       </header>

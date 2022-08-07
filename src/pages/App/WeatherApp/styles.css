@@ -3,7 +3,7 @@
   backdrop-filter: blur(8px);
   padding: 14px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   position: relative;
   z-index: 1000;
@@ -12,7 +12,18 @@
   margin-bottom: 6px;
 }
 
-.weather-app-page__header > h2 {
+.weather-app-page__searcher {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.weather-app-page__searcher > h2 {
   margin: 0;
   color: var(--white-1);
+}
+
+.weather-app-page__header > *:nth-child(3) {
+  align-self: flex-end;
 }
