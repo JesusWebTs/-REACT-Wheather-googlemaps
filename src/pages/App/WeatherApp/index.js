@@ -46,6 +46,7 @@ function WeatherApp() {
           <GoogleMapBackGround />
         </>
       )}
+      <GoogleMapBackGround />
     </div>
   );
 }

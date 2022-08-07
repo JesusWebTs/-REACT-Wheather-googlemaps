@@ -13,8 +13,9 @@ import useGoogleMapsBackground from "./hooks/useGoogleMapsBackground";
 
 function GoogleMapBackground() {
   const { addNewMarker, weathers, center, markers } = useGoogleMapsBackground();
-
-  return (
+  return process.env.NODE_ENV === "development" ? (
+    <></>
+  ) : (
     <GoogleMap
       defaultCenter={center}
       defaultZoom={10}
@@ -63,7 +64,9 @@ function GoogleMapBackground() {
 const WrappedMap = withScriptjs(withGoogleMap(GoogleMapBackground));
 
 export default () => {
-  return (
+  return process.env.NODE_ENV === "development" ? (
+    <GoogleMapBackground />
+  ) : (
     <div className="map-container map-container--fix">
       <WrappedMap
         onClick={(e) => {

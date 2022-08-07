@@ -12,7 +12,7 @@ const useGoogleMpasBackground = () => {
   const { weathers, newWeather } = useWeatherContext();
 
   useEffect(() => {
-    if (markers[markers.length - 1]) newWeather([markers[markers.length - 1]]);
+    if (markers[markers.length - 1]) newWeather(markers[markers.length - 1]);
     return () => {};
   }, []);
 
