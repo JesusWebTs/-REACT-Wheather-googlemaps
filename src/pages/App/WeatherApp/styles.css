@@ -1,0 +1,17 @@
+.weather-app-page__header {
+  background-color: var(--black-2);
+  backdrop-filter: blur(8px);
+  padding: 14px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  z-index: 1000;
+  box-shadow: 0 6px 8px 0 var(--black-2);
+  gap: 12px;
+}
+
+.weather-app-page__header > h2 {
+  margin: 0;
+  color: var(--white-1);
+}
