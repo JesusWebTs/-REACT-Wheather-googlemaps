@@ -7,6 +7,7 @@ import {
   NEW_FAVORITE_WEATHER,
   NEW_WEATHER,
   SET_WEATHER,
+  SET_CURRENT_COORS,
 } from "./weatherActionTypes";
 
 const reducer = (state, action) => {

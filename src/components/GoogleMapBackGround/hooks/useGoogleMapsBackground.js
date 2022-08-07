@@ -14,6 +14,7 @@ const useGoogleMpasBackground = () => {
 
   useEffect(() => {
     if (currentCoors) setCenter(currentCoors);
+    console.log(currentCoors);
     return () => {};
   }, [currentCoors]);
 
