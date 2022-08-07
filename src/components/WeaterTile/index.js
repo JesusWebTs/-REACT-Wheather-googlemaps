@@ -17,19 +17,21 @@ function WeatherTile({ weather }) {
           ? "weather-tile__background--show"
           : "weather-tile__background--hide"
       }`}
-      onClick={(e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        setShowTile((prev) => !prev);
-      }}
     >
-      <div className="weather-tile__container">
-        <button
-          className="weather-tile__delete-button"
-          onClick={() => {
-            deleteWeather(weather);
-          }}
-        />
+      <button
+        className="weather-tile__delete-button"
+        onClick={() => {
+          deleteWeather(weather);
+        }}
+      />
+      <div
+        className="weather-tile__container"
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          setShowTile((prev) => !prev);
+        }}
+      >
         <div className="weather-tile__mark">
           <div className="weather-tile__img-container">
             <img src={`${URL}${weather.weatherTipe[0].icon}.png`} />
