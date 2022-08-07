@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useWeather } from "../../../hooks";
+import useWeatherContext from "../../../context/Weather/weatherProvider";
 
 const initLocation = {
   lat: 10.48801,
@@ -9,11 +9,10 @@ const initLocation = {
 const useGoogleMpasBackground = () => {
   const [center, setCenter] = useState(initLocation);
   const [markers, setMarkers] = useState([initLocation]);
-  const { getWeather, weathers, addNewWeather } = useWeather();
-  const [available, setAvailable] = useState(false);
+  const { weathers, newWeather } = useWeatherContext();
 
   useEffect(() => {
-    if (markers[markers.length - 1]) getWeather([markers[markers.length - 1]]);
+    if (markers[markers.length - 1]) newWeather([markers[markers.length - 1]]);
     return () => {};
   }, []);
 
@@ -23,7 +22,7 @@ const useGoogleMpasBackground = () => {
   }, [weathers]);
 
   const addNewMarker = async (marker) => {
-    await addNewWeather([marker]);
+    newWeather(marker);
     setMarkers((prev) => [...prev, marker]);
   };
 
@@ -32,7 +31,6 @@ const useGoogleMpasBackground = () => {
     center,
     weathers,
     addNewMarker,
-    addNewWeather,
   };
 };
 

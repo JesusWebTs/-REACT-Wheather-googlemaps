@@ -1,13 +1,15 @@
 import React, { useState } from "react";
+import useWeatherContext from "../../context/Weather/weatherProvider";
 import "./styles.css";
 
 function WeatherTile({ weather }) {
   const URL = "http://openweathermap.org/img/w/";
+  const { deleteWeather } = useWeatherContext();
   const [show, setShowTile] = useState(false);
   const place =
-    !weather.name || weather.country
-      ? `${weather.name}, ${weather.country}`
-      : "GLobal";
+    weather.name == "" || weather.country == ""
+      ? "Global"
+      : `${weather.name}, ${weather.country}`;
   return (
     <div
       className={`weather-tile__background ${
@@ -22,6 +24,12 @@ function WeatherTile({ weather }) {
       }}
     >
       <div className="weather-tile__container">
+        <button
+          className="weather-tile__delete-button"
+          onClick={() => {
+            deleteWeather(weather);
+          }}
+        />
         <div className="weather-tile__mark">
           <div className="weather-tile__img-container">
             <img src={`${URL}${weather.weatherTipe[0].icon}.png`} />

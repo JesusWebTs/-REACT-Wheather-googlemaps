@@ -137,3 +137,34 @@
 .weather-tile__background--hide .weather-tile__mark {
   display: block;
 }
+
+.weather-tile__delete-button {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 0;
+  right: 0;
+  margin: 8px;
+  border-radius: 10px;
+  background-color: var(--white-2);
+  border-color: var(--white-1);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.weather-tile__delete-button::after,
+.weather-tile__delete-button::before {
+  content: "";
+  position: absolute;
+  background-color: var(--white-1);
+  width: 2px;
+  height: 100%;
+  inset: 0;
+  margin: auto;
+  transform: rotateZ(45deg);
+  border-radius: 50px;
+}
+
+.weather-tile__delete-button::before {
+  transform: rotateZ(-45deg);
+}

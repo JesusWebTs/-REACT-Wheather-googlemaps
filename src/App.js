@@ -1,13 +1,14 @@
 import React from "react";
 import "./App.css";
-import { GoogleMapBackGround, WeatherTile } from "./components";
-import { useWeather } from "./hooks";
+import { WeatherProvider } from "./context/Weather/weatherProvider";
+import AppNavigator from "./navigator/AppNavigator";
 
 function App() {
-  const { weathers } = useWeather();
   return (
     <div className="App">
-      <GoogleMapBackGround />
+      <WeatherProvider>
+        <AppNavigator />
+      </WeatherProvider>
     </div>
   );
 }
