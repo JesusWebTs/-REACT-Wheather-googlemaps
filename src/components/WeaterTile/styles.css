@@ -110,7 +110,7 @@
 }
 .weather-tile__background--show,
 .weather-tile__background--hide{
-  transition: transform .5s linear;
+  transition: all .5s linear;
 }
 .weather-tile__background--show,
 .weather-tile__background--hide:hover {
