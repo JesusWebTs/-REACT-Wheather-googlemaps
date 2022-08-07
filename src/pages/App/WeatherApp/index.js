@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import "./styles.css";
 import useWeatherContext from "../../../context/Weather/weatherProvider";
 import {
@@ -10,12 +10,13 @@ import {
 
 function WeatherApp() {
   const { weathers, newWeather } = useWeatherContext();
+  const [center, setCenter] = useState(weathers[0]);
 
   return (
     <div>
       <header className="weather-app-page__header">
         <h2>Weather Searcher</h2>
-        <AutoCompleteAddress />
+        <AutoCompleteAddress setCoors={setCenter} />
         <NavComponent
           routes={[
             { routeLink: "/", routeName: "Global", routeType: "user" },
@@ -24,7 +25,7 @@ function WeatherApp() {
           ]}
         />
       </header>
-      <GoogleMapBackGround />
+      <GoogleMapBackGround center={center} />
 
       {process.env.NODE_ENV === "development" || false ? (
         <>

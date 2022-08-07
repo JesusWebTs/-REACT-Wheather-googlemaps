@@ -11,8 +11,8 @@ import { GOOGLE_MAPS_API_KEY } from "../../credentials";
 import WeatherTile from "../WeaterTile";
 import useGoogleMapsBackground from "./hooks/useGoogleMapsBackground";
 
-function GoogleMapBackground() {
-  const { addNewMarker, weathers, center, markers } = useGoogleMapsBackground();
+function GoogleMapBackground({ center }) {
+  const { addNewMarker, weathers, markers } = useGoogleMapsBackground();
   return process.env.NODE_ENV === "development" ? (
     <></>
   ) : (
@@ -64,7 +64,7 @@ function GoogleMapBackground() {
 
 const WrappedMap = withScriptjs(withGoogleMap(GoogleMapBackground));
 
-export default () => {
+export default ({ center }) => {
   return process.env.NODE_ENV === "development" ? (
     <GoogleMapBackground />
   ) : (
@@ -83,6 +83,7 @@ export default () => {
           height: "100%",
           GoogleMapBackground: "black",
         }}
+        center={center}
       />
     </div>
   );
