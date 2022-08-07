@@ -13,7 +13,7 @@ import useGoogleMapsBackground from "./hooks/useGoogleMapsBackground";
 
 function GoogleMapBackground() {
   const { addNewMarker, weathers, center, markers } = useGoogleMapsBackground();
-  return process.env.NODE_ENV === "development" || false ? (
+  return process.env.NODE_ENV === "development" ? (
     <></>
   ) : (
     <GoogleMap
@@ -65,7 +65,7 @@ function GoogleMapBackground() {
 const WrappedMap = withScriptjs(withGoogleMap(GoogleMapBackground));
 
 export default () => {
-  return process.env.NODE_ENV === "development" || true ? (
+  return process.env.NODE_ENV === "development" ? (
     <GoogleMapBackground />
   ) : (
     <div className="map-container map-container--fix">
