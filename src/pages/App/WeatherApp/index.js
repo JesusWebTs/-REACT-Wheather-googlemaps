@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import useWeatherContext from "../../../context/Weather/weatherProvider";
-import { WeatherTile } from "../../../components";
+import { WeatherTile, GoogleMapBackGround } from "../../../components";
 
 function WeatherApp() {
   const { weathers, newWeather } = useWeatherContext();
@@ -11,16 +11,22 @@ function WeatherApp() {
 
   return (
     <div>
-      <button
-        onClick={() => {
-          newWeather({ lat: -54, lng: 5 });
-        }}
-      >
-        New Weather
-      </button>
-      {weathers.map((weather) => (
-        <WeatherTile weather={weather} />
-      ))}
+      {false ? (
+        <>
+          <button
+            onClick={() => {
+              newWeather({ lat: -54, lng: 5 });
+            }}
+          >
+            New Weather
+          </button>
+          {weathers.map((weather) => (
+            <WeatherTile weather={weather} />
+          ))}
+        </>
+      ) : (
+        <GoogleMapBackGround />
+      )}
     </div>
   );
 }

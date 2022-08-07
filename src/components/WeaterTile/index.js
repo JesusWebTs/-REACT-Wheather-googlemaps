@@ -64,7 +64,7 @@ function WeatherTile({ weather }) {
           <div className="weather-tile__predictions">
             <ul>
               {weather.dailyWeather
-                .filter((e, index) => index > 1)
+                .filter((e, index) => index > 0 && index < 7)
                 .map((dayWeather, index) => (
                   <li key={index}>
                     <span>{dayWeather.day}</span>

@@ -13,7 +13,8 @@ class WeatherInfoModel {
   weatherTipe = [{ id: 0, main: "", description: "", icon: "" }];
   wind = { speed: 0, deg: 0, gust: 0 };
   forecast = [];
-  constructor({ weather }) {
+  address = "";
+  constructor({ weather, address }) {
     this.id = uuidv4();
     this.coord = weather[0].coord ?? this.coord;
     this.country = weather[0].sys.country ?? this.country;
@@ -24,13 +25,12 @@ class WeatherInfoModel {
     this.timeZone = weather[0].timezone ?? null;
     this.weatherTipe = weather[0].weather;
     this.wind = weather[0].wind;
-
     this.dailyWeather = weather[1]
       ? weather[1].daily.map(
-          (dayWeather, index) =>
-            new DailyWeatherInfo({ dayWeather, day: index })
+          (dayWeather, index) => new DailyWeatherInfo({ dayWeather })
         )
       : [];
+    this.address = address ?? null;
   }
 
   __convertFahrenheitToDegree = (farengeis = 0) => farengeis - 32 / 1.8;

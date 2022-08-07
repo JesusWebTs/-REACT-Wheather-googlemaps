@@ -1,12 +1,11 @@
 const days = {
-  0: "Monday",
-  1: "Tuesday",
-  2: "Wednesday",
-  3: "Thursday",
-  4: "Friday",
-  5: "Saturday",
-  6: "Sunday",
-  7: "Monday",
+  0: "Sunday",
+  1: "Monday",
+  2: "Tuesday",
+  3: "Wednesday",
+  4: "Thursday",
+  5: "Friday",
+  6: "Saturday",
 };
 
 class DailyWeatherInfo {
@@ -16,8 +15,8 @@ class DailyWeatherInfo {
   temperature = 0;
   wind = { speed: 0, deg: 0, gust: 0 };
   weatherTipe = [{ id: 0, main: "", description: "", icon: "" }];
-  constructor({ dayWeather, day = 0 }) {
-    this.day = days[day];
+  constructor({ dayWeather }) {
+    this.day = days[new Date(parseInt(`${dayWeather.sunrise}000`)).getDay()];
     this.humidity = dayWeather.humidity;
     this.pressure = dayWeather.pressure;
     this.temperature = dayWeather.temp.day;
