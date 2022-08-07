@@ -27,7 +27,7 @@ function WeatherApp() {
           ]}
         />
       </header>
-      <GoogleMapBackGround center={center} />
+      <GoogleMapBackGround />
 
       {process.env.NODE_ENV === "development" || false ? (
         <>

@@ -11,7 +11,7 @@ import { GOOGLE_MAPS_API_KEY } from "../../credentials";
 import WeatherTile from "../WeaterTile";
 import useGoogleMapsBackground from "./hooks/useGoogleMapsBackground";
 
-function GoogleMapBackground({ center: _center }) {
+function GoogleMapBackground({}) {
   console.log("---");
   console.log(center);
   console.log("---");
@@ -21,7 +21,6 @@ function GoogleMapBackground({ center: _center }) {
   ) : (
     <GoogleMap
       defaultCenter={center}
-      center={_center}
       defaultZoom={10}
       styles={{
         width: "100%",
@@ -68,7 +67,7 @@ function GoogleMapBackground({ center: _center }) {
 
 const WrappedMap = withScriptjs(withGoogleMap(GoogleMapBackground));
 
-export default ({ center }) => {
+export default () => {
   return process.env.NODE_ENV === "development" ? (
     <GoogleMapBackground center={center} />
   ) : (
@@ -87,7 +86,6 @@ export default ({ center }) => {
           height: "100%",
           GoogleMapBackground: "black",
         }}
-        center={center}
       />
     </div>
   );
