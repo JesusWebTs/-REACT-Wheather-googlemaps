@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import useWeatherContext from "../../context/Weather/weatherProvider";
 import "./styles.css";
 
@@ -6,6 +6,7 @@ function WeatherTile({ weather }) {
   const URL = "http://openweathermap.org/img/w/";
   const { deleteWeather } = useWeatherContext();
   const [show, setShowTile] = useState(false);
+  const cancelButtonref = useRef();
   const place =
     weather.name == "" || weather.country == ""
       ? "Global"
@@ -18,7 +19,6 @@ function WeatherTile({ weather }) {
           : "weather-tile__background--hide"
       }`}
       onClick={(e) => {
-        e.preventDefault();
         setShowTile((prev) => !prev);
       }}
     >

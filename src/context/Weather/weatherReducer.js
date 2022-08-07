@@ -6,6 +6,7 @@ import {
   GET_WEATHER,
   NEW_FAVORITE_WEATHER,
   NEW_WEATHER,
+  SET_WEATHER,
 } from "./weatherActionTypes";
 
 const reducer = (state, action) => {
@@ -28,6 +29,8 @@ const reducer = (state, action) => {
       return;
     case NEW_WEATHER:
       return { ...state, weathers: [...state.weathers, payload] };
+    case SET_WEATHER:
+      return { ...state, weathers: [payload] };
     default:
       console.log(`No VCase alid for Type ${type}`);
       return state;

@@ -1,4 +1,4 @@
-import { DELETE_WEATHER, NEW_WEATHER } from "./weatherActionTypes";
+import { DELETE_WEATHER, NEW_WEATHER, SET_WEATHER } from "./weatherActionTypes";
 import { weatherApi } from "../../services/APIS";
 
 const newFavoriteWeather = (dispatch) => {
@@ -48,6 +48,13 @@ const getWheaters = (dispatch) => {
       payload: data,
     });
 };
+const setWheaters = (dispatch) => {
+  return async (data) =>
+    dispatch({
+      type: SET_WEATHER,
+      payload: await weatherApi.getFullWeatherPrediction(data),
+    });
+};
 const deleteWeather = (dispatch) => {
   return (data) => {
     return dispatch({
@@ -65,5 +72,6 @@ export {
   addNewWeather,
   getWheaters,
   deleteWeather,
+  setWheaters,
   newWeather,
 };

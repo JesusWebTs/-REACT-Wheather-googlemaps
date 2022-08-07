@@ -9,10 +9,10 @@ const initLocation = {
 const useGoogleMpasBackground = () => {
   const [center, setCenter] = useState(initLocation);
   const [markers, setMarkers] = useState([initLocation]);
-  const { weathers, newWeather } = useWeatherContext();
+  const { weathers, newWeather, setWheaters } = useWeatherContext();
 
   useEffect(() => {
-    if (markers[markers.length - 1]) newWeather(markers[markers.length - 1]);
+    if (markers[markers.length - 1]) setWheaters(markers[markers.length - 1]);
     return () => {};
   }, []);
 

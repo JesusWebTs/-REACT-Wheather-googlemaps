@@ -24,6 +24,7 @@ function GoogleMapBackground() {
         height: "100%",
       }}
       onClick={(e) => {
+        console.log(e);
         addNewMarker({
           lat: e.latLng.lat(),
           lng: e.latLng.lng(),
