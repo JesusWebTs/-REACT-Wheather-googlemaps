@@ -44,9 +44,7 @@ function GoogleMapBackground({}) {
       {weathers.map((weather) => (
         <React.Fragment key={weather.id}>
           <OverlayView
-            onClick={(e) => {
-              console.log(e);
-            }}
+            onClick={(e) => {}}
             position={{ lat: weather.coord.lat, lng: weather.coord.lon }}
             mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
           >

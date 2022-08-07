@@ -19,6 +19,7 @@ function WeatherTile({ weather }) {
           : "weather-tile__background--hide"
       }`}
       onClick={(e) => {
+        e.stopPropagation();
         setShowTile((prev) => !prev);
       }}
     >
