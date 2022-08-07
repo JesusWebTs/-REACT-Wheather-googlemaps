@@ -66,7 +66,7 @@ const WrappedMap = withScriptjs(withGoogleMap(GoogleMapBackground));
 
 export default () => {
   return process.env.NODE_ENV === "development" ? (
-    <GoogleMapBackground center={center} />
+    <GoogleMapBackground />
   ) : (
     <div className="map-container map-container--fix">
       <WrappedMap
