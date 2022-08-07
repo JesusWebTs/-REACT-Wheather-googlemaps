@@ -12,9 +12,6 @@ import WeatherTile from "../WeaterTile";
 import useGoogleMapsBackground from "./hooks/useGoogleMapsBackground";
 
 function GoogleMapBackground({}) {
-  console.log("---");
-  console.log(center);
-  console.log("---");
   const { addNewMarker, weathers, markers, center } = useGoogleMapsBackground();
   return process.env.NODE_ENV === "development" ? (
     <></>
