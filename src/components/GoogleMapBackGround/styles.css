@@ -12,6 +12,12 @@
   z-index: 10;
 }
 
-.google-map-marker {
+.google-map-marker,
+.gm-control-active,
+.gm-fullscreen-control {
   transform: translateX(-35px) translateY(-35px);
+}
+
+.gmnoprint {
+  transform: translateY(calc(55px + 14px + 10px));
 }
