@@ -35,8 +35,10 @@ function WeatherApp() {
           >
             New Weather
           </button>
-          {weathers.map((weather) => (
-            <WeatherTile weather={weather} />
+          {weathers.map((weather, i) => (
+            <React.Fragment key={i}>
+              <WeatherTile weather={weather} />
+            </React.Fragment>
           ))}
         </>
       ) : (

@@ -64,8 +64,8 @@ function GoogleMapBackground() {
 
 const WrappedMap = withScriptjs(withGoogleMap(GoogleMapBackground));
 
-export default () => {
-  return process.env.NODE_ENV === "development" ||false ? (
+export default React.memo(() => {
+  return process.env.NODE_ENV === "development" || true ? (
     <GoogleMapBackground />
   ) : (
     <div className="map-container map-container--fix">
@@ -86,4 +86,4 @@ export default () => {
       />
     </div>
   );
-};
+});
