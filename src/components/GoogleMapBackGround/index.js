@@ -17,7 +17,7 @@ function GoogleMapBackground({}) {
     <></>
   ) : (
     <GoogleMap
-      defaultCenter={center}
+      center={center}
       defaultZoom={10}
       styles={{
         width: "100%",

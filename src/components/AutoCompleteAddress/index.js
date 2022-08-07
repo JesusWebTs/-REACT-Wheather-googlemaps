@@ -9,7 +9,7 @@ import useWeatherContext from "../../context/Weather/weatherProvider";
 
 const LocationSearchInput = ({ setCoors = () => {} }) => {
   const [address, setAddress] = useState();
-  const { newWeather } = useWeatherContext();
+  const { newWeather, setCurrentCoors } = useWeatherContext();
 
   useEffect(() => {
     /* console.log(address); */
@@ -24,6 +24,8 @@ const LocationSearchInput = ({ setCoors = () => {} }) => {
     geocodeByAddress(address)
       .then((results) => getLatLng(results[0]))
       .then((latLng) => {
+        setAddress("");
+        setCurrentCoors(latLng);
         newWeather(latLng);
         setCoors(latLng);
       })

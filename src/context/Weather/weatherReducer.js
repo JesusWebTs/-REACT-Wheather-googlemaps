@@ -31,6 +31,8 @@ const reducer = (state, action) => {
       return { ...state, weathers: [...state.weathers, payload] };
     case SET_WEATHER:
       return { ...state, weathers: [payload] };
+    case SET_CURRENT_COORS:
+      return { ...state, currentCoors: payload };
     default:
       console.log(`No VCase alid for Type ${type}`);
       return state;

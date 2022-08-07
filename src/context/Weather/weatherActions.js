@@ -1,4 +1,9 @@
-import { DELETE_WEATHER, NEW_WEATHER, SET_WEATHER } from "./weatherActionTypes";
+import {
+  DELETE_WEATHER,
+  NEW_WEATHER,
+  SET_CURRENT_COORS,
+  SET_WEATHER,
+} from "./weatherActionTypes";
 import { weatherApi } from "../../services/APIS";
 
 const newFavoriteWeather = (dispatch) => {
@@ -63,6 +68,14 @@ const deleteWeather = (dispatch) => {
     });
   };
 };
+const setCurrentCoors = (dispatch) => {
+  return (data) => {
+    return dispatch({
+      type: SET_CURRENT_COORS,
+      payload: data,
+    });
+  };
+};
 
 export {
   newFavoriteWeather,
@@ -74,4 +87,5 @@ export {
   deleteWeather,
   setWheaters,
   newWeather,
+  setCurrentCoors,
 };

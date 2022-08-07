@@ -9,3 +9,7 @@ export const NEW_WEATHER = "NEW_WEATHER";
 export const GET_WEATHER = "GET_WEATHER";
 export const DELETE_WEATHER = "DELETE_WEATHER";
 export const SET_WEATHER = "SET_WEATHER";
+
+/* Coors */
+
+export const SET_CURRENT_COORS = "SET_CURRENT_COORS";
