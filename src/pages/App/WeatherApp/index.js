@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./styles.css";
 import useWeatherContext from "../../../context/Weather/weatherProvider";
 import {
@@ -10,7 +10,9 @@ import {
 
 function WeatherApp() {
   const { weathers, newWeather } = useWeatherContext();
-  const [center, setCenter] = useState(weathers[0]);
+  const [center, setCenter] = useState(null);
+
+  console.log(center);
 
   return (
     <div>
