@@ -116,9 +116,7 @@
 .weather-tile__background--hide:hover {
   transform: scale(1);
 }
-.weather-tile__background--hide:hover > .weather-tile__container {
-  background-color: var(--black-3);
-}
+
 .weather-tile__background--hide > .weather-tile__container {
   background-color: var(--black-2);
   border: none;

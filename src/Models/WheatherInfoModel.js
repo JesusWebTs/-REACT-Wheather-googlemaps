@@ -35,7 +35,6 @@ class WeatherInfoModel {
 
   __convertFahrenheitToDegree = (farengeis = 0) => farengeis - 32 / 1.8;
   __convertKelvinToDegree = (kelvin = 0) => kelvin - 273.15;
-
   __getDailyForeCast = ({ forecast = [] }) => {};
   __getHourlyForeCast = ({ forecast = [] }) => {};
 }
