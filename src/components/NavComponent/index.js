@@ -4,7 +4,7 @@ import "./styles.css";
 function NavComponent({
   routes = [{ routeName: "noname", routeLink: "/", routeType: "notype" }],
 }) {
-  console.log(routes);
+  /* console.log(routes); */
   return (
     <nav className="nav-component__container">
       <ul>

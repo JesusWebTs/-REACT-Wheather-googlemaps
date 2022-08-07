@@ -3,4 +3,5 @@ export default {
   token: "",
   type: "",
   name: "",
+  autenticated: false,
 };

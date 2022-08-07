@@ -16,11 +16,6 @@ const useGoogleMpasBackground = () => {
     return () => {};
   }, []);
 
-  useEffect(() => {
-    console.log(weathers);
-    return () => {};
-  }, [weathers]);
-
   const addNewMarker = async (marker) => {
     newWeather(marker);
     setMarkers((prev) => [...prev, marker]);

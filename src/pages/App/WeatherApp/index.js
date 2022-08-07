@@ -11,10 +11,6 @@ import {
 function WeatherApp() {
   const { weathers, newWeather } = useWeatherContext();
 
-  useEffect(() => {
-    console.log(weathers);
-  }, [weathers]);
-
   return (
     <div>
       <header className="weather-app-page__header">
@@ -28,7 +24,9 @@ function WeatherApp() {
           ]}
         />
       </header>
-      {process.env.NODE_ENV === "development" ? (
+      <GoogleMapBackGround />
+
+      {process.env.NODE_ENV === "development" || false ? (
         <>
           <button
             onClick={() => {
@@ -42,11 +40,8 @@ function WeatherApp() {
           ))}
         </>
       ) : (
-        <>
-          <GoogleMapBackGround />
-        </>
+        <></>
       )}
-      <GoogleMapBackGround />
     </div>
   );
 }
