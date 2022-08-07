@@ -22,13 +22,13 @@ function WeatherTile({ weather }) {
         setShowTile((prev) => !prev);
       }}
     >
-      <button
-        className="weather-tile__delete-button"
-        onClick={() => {
-          deleteWeather(weather);
-        }}
-      />
       <div className="weather-tile__container">
+        <button
+          className="weather-tile__delete-button"
+          onClick={() => {
+            deleteWeather(weather);
+          }}
+        />
         <div className="weather-tile__mark">
           <div className="weather-tile__img-container">
             <img src={`${URL}${weather.weatherTipe[0].icon}.png`} />
