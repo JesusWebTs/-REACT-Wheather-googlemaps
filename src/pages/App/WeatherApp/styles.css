@@ -9,6 +9,7 @@
   z-index: 1000;
   box-shadow: 0 6px 8px 0 var(--black-2);
   gap: 12px;
+  margin-bottom: 6px;
 }
 
 .weather-app-page__header > h2 {

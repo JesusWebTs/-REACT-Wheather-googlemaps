@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles.css"
+import "./styles.css";
 
 function NavComponent({
   routes = [{ routeName: "noname", routeLink: "/", routeType: "notype" }],
@@ -8,8 +8,8 @@ function NavComponent({
   return (
     <nav className="nav-component__container">
       <ul>
-        {routes.map(({ routeName, routeLink, routeType }) => (
-          <li className="nav-component__item">
+        {routes.map(({ routeName, routeLink, routeType }, i) => (
+          <li key={routeLink + "-" + i} className="nav-component__item">
             <div>
               <a className="nav-component__link" href={routeLink}>
                 {routeName}
