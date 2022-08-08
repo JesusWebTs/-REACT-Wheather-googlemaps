@@ -16,6 +16,7 @@
 }
 
 .weather-tile__container {
+  overflow: hidden;
   width: 100%;
   height: 100%;
   background-color: var(--black-2);
@@ -80,6 +81,7 @@
   margin: 0;
 }
 .weather-tile__body {
+  background-color: none;
 }
 .weather-tile__predictions > ul {
   margin: 0;
@@ -110,7 +112,7 @@
 }
 .weather-tile__background--show,
 .weather-tile__background--hide {
-  transition: all 0.2s linear;
+  transition: all .2s linear;
 }
 .weather-tile__background--show,
 .weather-tile__background--hide:hover {
